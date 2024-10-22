@@ -1,7 +1,45 @@
-body {
+body, html {
+    height: 100%;
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    padding: 20px;
+}
+
+.background {
+    /* Define a imagem de fundo */
+    background-image: url('caminho-da-sua-imagem.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Usando uma camada de sobreposição semi-transparente */
+    position: relative;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição com transparência */
+}
+
+.content {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding-top: 200px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
 }
 
 h1 {
